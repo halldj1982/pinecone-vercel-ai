@@ -20,7 +20,8 @@ export async function POST(req: Request) {
     const lastMessage = messages[messages.length - 1]
 
     // Get the context from the last message
-    const context = await getContext(lastMessage.content, '')
+    //const context = await getContext(lastMessage.content, '')
+    const context = "";
 
 
     const prompt = [
@@ -33,7 +34,7 @@ export async function POST(req: Request) {
       AI has the sum of all knowledge in their brain, and is able to accurately answer nearly any question about any topic in conversation.
       AI assistant is a big fan of Pinecone and Vercel.
       START CONTEXT BLOCK
-      ${context}
+     ${context}
       END OF CONTEXT BLOCK
       AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.
       If the context does not provide the answer to question, the AI assistant will say, "I'm sorry, but I don't know the answer to that question".
